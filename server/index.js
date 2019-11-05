@@ -4,29 +4,23 @@ const fs = require('fs');
 
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
-app.get('/register', (req, res) => {
-    let newbie = req.query.login + '_' + req.query.pass;
-    if (data[newbie] != null) res.send('err');
-    data[newbie] = {};
-    console.log(data);
-    fs.writeFile('./data.json', JSON.stringify(data), err => console.log(err));
-    res.send('done');
-});
-
 app.get('/add', (req, res) => {
+    let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
+    let domain = req.query.domain;
     let login = req.query.login;
-    let pass = req.query.pass;
-    let url = req.query.url;
-    let urlPass  = req.query.urlPass;
-    data[login + '_' + pass][url] = urlPass;
+    let pass = req.query.password;
+    data[user] = {};
+    data[user][domain] = {
+            "login": login,
+            "password": pass
+    };
     fs.writeFile('./data.json', JSON.stringify(data), err => console.log(err));
     res.send('done');
 });
 
 app.get('/', (req, res) => {
-    let login = req.query.login;
-    let pass = req.query.pass;
-    res.send(data[login + '_' + pass]);
+    let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
+    res.send(data[user]);
 });
 
 
