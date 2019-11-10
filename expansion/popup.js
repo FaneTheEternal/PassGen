@@ -1,4 +1,3 @@
-const serverUrl = "http://192.168.1.95:3000";
 addEventListener("DOMContentLoaded", () => {
     const checkPageButton = document.getElementById('checkPage');
     const passField = document.getElementById('input_password');
