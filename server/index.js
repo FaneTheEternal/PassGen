@@ -18,7 +18,7 @@ app.get('/add', (req, res) => {
             "login": login,
             "password": pass
     };
-    fs.writeFile('./data.json', JSON.stringify(data), err => console.log(err));
+    fs.writeFile('./data.json', JSON.stringify(data), err => console.log(`Errors: ${err}`));
     res.send('done');
 });
 

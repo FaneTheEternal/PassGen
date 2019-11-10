@@ -24,14 +24,12 @@ addEventListener("DOMContentLoaded", () => {
     checkSaveButton.addEventListener('click', () => {
         const login = document.getElementById('input_login').value;
         const pass = document.getElementById('input_password').value;
-        let domain = '';
         //void chrome.runtime.lastError;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, {domain: "zhopa"}, response => void chrome.runtime.lastError)
+            chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass}, response => {
+                void chrome.runtime.lastError;
+            });
         });
-        fetch(`http://192.168.1.95:3000/?login=${login}&password=${pass}&domain=${domain}`)
-            .then(r => r.text())
-            .then(result => console.log(result));
     });
 
     checkSeeButton.addEventListener('click', () => {  });
