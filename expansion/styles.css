@@ -9,19 +9,15 @@ h1 {
     text-align: center;
   margin: 10px;
  font-family: 'Wallpoet', cursive;
-  font-size: 4em;
-  letter-spacing: 2px;
+  font-size: 3em;
+  letter-spacing: 1px;
   font-weight: 630;
+  
   color: white;
   }
   
-  
-.ph2 {
-margin: 11px;
-    float:left;
-    
-}
-.ph3 {
+
+.ph4 {
   margin: 11px;
     float:right;
  }
@@ -35,8 +31,56 @@ margin-left:5%;
  float:right;
      
  }
- .save {
-     margin-left:34%;
-     margin-top:80px;
-     margin-bottom:10px;
- }
+
+a.ph2 {
+  margin: 11px;
+  float:left;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+a.ph2:hover { background: RGBA(255,255,255,.2); }
+a.ph2:active { background: white; }
+
+a.ph3 {
+  margin: 11px;
+  float:right;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+a.ph3:hover { background: RGBA(255,255,255,.2); }
+a.ph3:active { background: white; }
+
+
+a.ph5 {
+  margin-left:34%;
+  margin-top:20px;
+  margin-bottom:10px;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+a.ph5:hover { background: RGBA(255,255,255,.2); }
+a.ph5:active { background: white; }
