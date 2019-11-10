@@ -5,7 +5,7 @@ addEventListener("DOMContentLoaded", () => {
     const loginField = document.getElementById('input_login');
     const checkSaveButton = document.getElementById('DataSave');
     const checkSeeButton = document.getElementById('Find');
-
+    const HIDE = document.getElementById('contain');
 
     checkPageButton.addEventListener('click', () => {
         passField.style.visibility = '';
@@ -32,5 +32,5 @@ addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    checkSeeButton.addEventListener('click', () => {  });
+    checkSeeButton.addEventListener('click', () => { HIDE.style.visibility = "hidden"; });
 });

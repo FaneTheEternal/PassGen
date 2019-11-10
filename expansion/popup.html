@@ -5,14 +5,15 @@
 	<link href="styles.css" rel="stylesheet">
         <title>Passwords manager</title>
         <script src="popup.js"></script>
-<style> body {
-        width: 400px;
-        margin: 0;
-        background-image: url(bck.jpg);
-        border: 3mm ridge rgba(200, 200, 220, .5);}
-	input[type="text"]::-webkit-input-placeholder { padding: 0 0 0 2px; color: white; }
- 	input[type="text"] { padding: 0 0 0 3px; color: white;}
-</style>
+		<style> 
+			body {
+       		 	width: 400px;
+        		margin: 0;
+        		background-image: url(bck.jpg);
+        		border: 3mm ridge rgba(200, 200, 220, .5);}
+			input[type="text"]::-webkit-input-placeholder { padding: 0 0 0 2px; color: white; }
+ 			input[type="text"] { padding: 0 0 0 3px; color: white;}
+		</style>
     </head>
     
     <body>
@@ -20,19 +21,16 @@
             <div class="flex flex--center">
                 <div class="pv1ph2 title-box">
                 <h1>PASSWORD MANAGER</h1>
-                </div>
-             </div>
-             
+            </div>
+        </div>
+        <div id="contain" style="visibility: 1;">    
            <div><a href="#" class="ph2 button-box" id="checkPage">Generate password</a></div>
            <div><a href="#" class="ph3 button-box" id="Find">See all passwords</a></div>
-        	<div class="input"> 
-<input id="input_login" type="text" value placeholder="Login" style="visibility: hidden; height: 25px; width: 100px; background-color: rgba(0,0,0,0);border-style: solid; border-width: 2px; border-color: white; padding: 0 0 0 3px;"> 
-
-	   </div> 
-		<div class="password">
-<input id="input_password" type="text" style="visibility: hidden; height: 25px; width: 100px; color: white; background-color: rgba(0,0,0,0); border-style: solid; border-width: 2px; border-color: white;"></div>
-    </div>
-    <div><a href="#" class="ph5 button-box" id="DataSave" style="visibility: hidden">Save login details</a></div>
-   
-        
+           <div class="input"> <input id="input_login" type="text" value placeholder="Login" style="visibility: hidden; height: 25px; width: 100px; background-color: rgba(0,0,0,0);border-style: solid; border-width: 2px; border-color: white; padding: 0 0 0 3px;"> </div> 
+	   <div class="password"><input id="input_password" type="text" style="visibility: hidden; height: 25px; width: 100px; color: white; background-color: rgba(0,0,0,0); border-style: solid; border-width: 2px; border-color: white;"></div>
+    	   <div><a href="#" class="ph5 button-box" id="DataSave" style="visibility: hidden">Save login details</a>
+	</div>
+	
+	</div>
+ 
     </body>
