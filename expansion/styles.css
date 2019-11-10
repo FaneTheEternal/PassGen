@@ -8,11 +8,10 @@ font-variant: small-caps;
 h1 {
     text-align: center;
   margin: 10px;
-  font-family:Courier, monospace;
+ font-family: 'Wallpoet', cursive;
   font-size: 4em;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-style: italic;
+  letter-spacing: 2px;
+  font-weight: 630;
   color: white;
   }
   
