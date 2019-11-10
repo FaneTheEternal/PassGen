@@ -10,7 +10,7 @@ addEventListener("DOMContentLoaded", () => {
         let pass = '';
         let map = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&\'()*+,-./:;<=>?@[\\]^_\`{|}~';
 	    for (let i = 0 ; i < 12 ; i++) { 
-	        let [b] = crypto.getRandomValues( new Uint8Array(1) ); 
+	        let b = crypto.getRandomValues( new Uint8Array(1) ); 
 	        pass += map[ b[0] % map.length ]; 
 	    }
         passField.innerHTML = pass;
