@@ -5,12 +5,13 @@ const crypto = require('crypto');
 
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
+
 app.get('/add', (req, res) => {
     let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
     let domain = req.query.domain;
     let login = req.query.login;
     let pass = req.query.password;
-    data[user] = {};
+    if (data[user] == undefined) data[user] = {};
     data[user][domain] = {
             "login": login,
             "password": pass
