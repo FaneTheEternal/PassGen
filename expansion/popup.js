@@ -24,9 +24,10 @@ addEventListener("DOMContentLoaded", () => {
     checkSaveButton.addEventListener('click', () => {
         const login = document.getElementById('input_login').value;
         const pass = document.getElementById('input_password').value;
-        fetch(`http://192.168.1.95:3000/?login=${login}&password=${pass}`)
-            .then(r => r.text())
-            .then(result => console.log(result));
+        
+        chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+            chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass}, response => console.log(response) )
+        });
     });
 
     checkSeeButton.addEventListener('click', () => {  });
