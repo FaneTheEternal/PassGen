@@ -1,7 +1,10 @@
 const app = require('express')();
-const http = require('http').Server(app);
 const fs = require('fs');
-const crypto = require('crypto');
+const privateKey  = fs.readFileSync('sslcert/rootCA-key.pem', 'utf8');
+const certificate = fs.readFileSync('sslcert/rootCA.pem', 'utf8');
+
+const credentials = {key: privateKey, cert: certificate};
+const https = require('https').Server(credentials, app);
 
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
@@ -30,6 +33,6 @@ app.get('/', (req, res) => {
 });
 
 
-http.listen(3000, () => {
-    console.log("HTTP server starred on post 3000");
+https.listen(8443, () => {
+    console.log(`HTTPS server starred on port 8443`);
 });
