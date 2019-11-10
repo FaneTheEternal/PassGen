@@ -44,7 +44,7 @@ a.ph2 {
   outline: none;
   border: 2px solid;
   border-radius: 1px;
-  transition: 0.2s;
+
 } 
 a.ph2:hover { background: RGBA(255,255,255,.2); }
 a.ph2:active { background: white; }
@@ -61,7 +61,7 @@ a.ph3 {
   outline: none;
   border: 2px solid;
   border-radius: 1px;
-  transition: 0.2s;
+
 } 
 a.ph3:hover { background: RGBA(255,255,255,.2); }
 a.ph3:active { background: white; }
@@ -80,7 +80,7 @@ a.ph5 {
   outline: none;
   border: 2px solid;
   border-radius: 1px;
-  transition: 0.2s;
+
 } 
 a.ph5:hover { background: RGBA(255,255,255,.2); }
 a.ph5:active { background: white; }
