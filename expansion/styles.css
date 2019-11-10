@@ -1,0 +1,38 @@
+body {
+  box-sizing: border-box;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+}
+h1 {
+    text-align: center;
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  letter-spacing: 0px;
+  }
+  
+.ph2 {
+margin: 11px;
+    float:left;
+    
+}
+.ph3 {
+  margin: 11px;
+    float:right;
+ }
+ .input {
+margin-left:5%;
+ float:left;
+     
+ }
+ .password {
+     margin-right:5%;
+ float:right;
+     
+ }
+ .save {
+     margin-left:34%;
+     margin-top:100px;
+     margin-bottom:20px;
+ }
