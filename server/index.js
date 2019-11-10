@@ -8,6 +8,7 @@ let data = JSON.parse(fs.readFileSync('./data.json'))
 
 app.get('/add', (req, res) => {
     console.log(`${req.method}: ${req.rawHeaders[1]}`);
+    console.log(req.query);
     let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
     let domain = req.query.domain;
     let login = req.query.login;
@@ -23,8 +24,9 @@ app.get('/add', (req, res) => {
 
 app.get('/', (req, res) => {
     console.log(`${req.method}: ${req.rawHeaders[1]}`);
+    console.log(req.query);
     let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
-    res.send(data[user]);
+    res.send(`${data[user]}`);
 });
 
 

@@ -1,3 +1,4 @@
+const serverUrl = "http://192.168.1.95:3000";
 addEventListener("DOMContentLoaded", () => {
     const checkPageButton = document.getElementById('checkPage');
     const passField = document.getElementById('field');
@@ -5,21 +6,28 @@ addEventListener("DOMContentLoaded", () => {
     const checkSaveButton = document.getElementById('DataSave');
     const checkSeeButton = document.getElementById('Find');
 
-	let login = '';	
 
     checkPageButton.addEventListener('click', () => {
         passField.style.visibility = '';
         passField2.style.visibility = '';
         let pass = '';
-        let map = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ! \" # $ % & \' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _\` { | } ~'; 
-	for (let i = 0 ; i < 12 ; i++) { 
-	let [b] = crypto.getRandomValues( new Uint8Array(1) ); 
-	pass += map[ b[0] % map.length ]; 
-	}
+        let map = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&()*+,-./:;<=>?@[]^_{|}~'; 
+	    for (let i = 0 ; i < 12 ; i++) { 
+	        let b = crypto.getRandomValues( new Uint8Array(1) );
+	        pass += map[ b[0] % map.length ]; 
+	    }
         passField.innerHTML = pass;
-        login=document.getElementById('input_login').value;
         checkSaveButton.style.visibility = '';
+        passBuffer = pass;
     });
-    checkSaveButton.addEventListener('click', () => {  });
+
+    checkSaveButton.addEventListener('click', () => {
+        const login = document.getElementById('input_login').value;
+        const pass = document.getElementById('input_password').value;
+        fetch(`http://192.168.1.95:3000/?login=${login}&password=${pass}`)
+            .then(r => r.text())
+            .then(result => console.log(result));
+    });
+
     checkSeeButton.addEventListener('click', () => {  });
 });
