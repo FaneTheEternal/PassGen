@@ -54,7 +54,7 @@ addEventListener("DOMContentLoaded", () => {
                 
                 for (let domain in data) {
                     for (let login in data[domain]) {
-                        field.innerHTML += `<h5 id="dataStr">${domain}: ${login} : ${data[domain][login]}</h5>`;
+                        field.innerHTML += `<div id="dataStr">${domain}: ${login} : ${data[domain][login]}</div>`;
                     }
                 }
             });
