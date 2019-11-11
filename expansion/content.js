@@ -4,14 +4,11 @@
 
 const x = (window.location.hostname.toString());
 
-chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
-    chrome.runtime.sendMessage({login: request.login, password: request.password, domain: x, req: 'send'});
-  });
-
-
-
-$('input[type=sumbit]').click( () => {
-  const login = $('input[type=email').val();
-  const password = $('input[type=password').val();
-  chrome.runtime.sendMessage({login: login, password: password, domain: x, req: 'send'});
+chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => { 
+  if (request.req == 'send') chrome.runtime.sendMessage({login: request.login, password: request.password, domain: x, req: 'sendS'});
+  else if (request.req == 'set') {
+    $('input[name=email]').val(request.login);
+    $('input[type=password]').val(request.password);
+  } 
 });
+

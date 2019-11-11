@@ -19,10 +19,8 @@ app.get('/add', (req, res) => {
     let login = req.query.login;
     let pass = req.query.password;
     if (data[user] == undefined) data[user] = {};
-    data[user][domain] = {
-            "login": login,
-            "password": pass
-    };
+    if (data[user][domain] == undefined) data[user][domain] = {};
+    data[user][domain][login] = password;
     fs.writeFile('./data.json', JSON.stringify(data), err => console.log(`Errors: ${err}`));
     res.send('done');
 });

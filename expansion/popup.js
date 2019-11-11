@@ -27,11 +27,24 @@ addEventListener("DOMContentLoaded", () => {
         checkSaveButton.innerHTML ="Login details saved";
         //void chrome.runtime.lastError;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass}, response => {
+            chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass, req: 'send'}, response => {
                 void chrome.runtime.lastError;
             });
         });
     });
 
-    checkSeeButton.addEventListener('click', () => { HIDE.style.display = "none"; view.style.display = "block"; });
+    checkSeeButton.addEventListener('click', () => { 
+        HIDE.style.display = "none"; 
+        view.style.display = "block"; 
+        const field = document.getElementsByClassName('block1');
+        fetch(`http://localhost:8080/`)
+            .then(r => r.text())
+            .then(result => {
+                for (let domain in result) {
+                    for (let login in domain) {
+                        field.innerHTML += `<h5>${domain}: ${login} : ${domain[login]}</h5>`;
+                    }
+                }
+            });
+    });
 });
