@@ -23,6 +23,7 @@ addEventListener("DOMContentLoaded", () => {
     checkSaveButton.addEventListener('click', () => {
         const login = document.getElementById('input_login').value;
         const pass = document.getElementById('input_password').value;
+        checkSaveButton.innerHTML ="Saved";
         //void chrome.runtime.lastError;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass}, response => {
