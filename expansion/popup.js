@@ -32,5 +32,8 @@ addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    checkSeeButton.addEventListener('click', () => { HIDE.style.visibility = "hidden"; });
+    checkSeeButton.addEventListener('click', () => { 
+        HIDE.style.visibility = "hidden"; 
+        
+    });
 });
