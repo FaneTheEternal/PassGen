@@ -8,6 +8,7 @@
 		<style> 
 			body {
        		 	width: 400px;
+       		 	height: 260px;
         		margin: 0;
         		background-image: url(bck.jpg);
         		border: 10px ridge rgba(200, 200, 220, .5);}
@@ -26,18 +27,21 @@
         </div>
         <div id="contain" style="visibility: 1; display: block;">    
            <div><a href="#" class="ph2 button-box" id="checkPage">Generate password</a></div>
-           <div><a href="#" class="ph3 button-box" id="Find">See all passwords</a></div>
+           <div><a href="#" class="ph3 button-box" id="Find">See for current site</a></div>
            <div class="input"> <input id="input_login" type="text" value placeholder="Login" style="visibility: hidden; height: 25px; width: 100px; background-color: rgba(0,0,0,0);border-style: solid; border-width: 2px; border-color: white; padding: 0 0 0 3px;"> </div> 
 	   <div class="password"><input id="input_password" type="text" style="visibility: hidden; height: 25px; width: 100px; color: white; background-color: rgba(0,0,0,0); border-style: solid; border-width: 2px; border-color: white;"></div>
     	   <div><a href="#" class="ph5 button-box" id="DataSave" style="visibility: hidden">Save login details</a></div>
 	</div>
  		<div id="checklist" style="display: none;">
  	  		<div class="parent">
- 	    		<div class="block1"></div>
-	  	</div>
+ 	    		<div class="block1" id="currentfield">сurrent</div>
+ 	    		<div class="block1" id="allfields" style="display:none;">all</div>
+ 	    		<div><a href="#" class="ph6 button-box" id="seeALL">See all passwords</a></div>
+	  	    </div>
 		<div class="block4"></div>
 		<div class="block5"></div>
 		<div class="block6"></div>
  	   
 	</div> 
+    </body>
     </body>

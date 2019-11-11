@@ -22,7 +22,7 @@ h1 	{
 			margin-bottom:20px;
           		padding:5px;
           		width: 330px;
-          		min-height:80px;
+          		min-height:70px;
           		background: #ccc;
           		border: solid 1px black; 
           		float: left;}
@@ -71,7 +71,7 @@ a.ph3:active { background: white; }
 
 
 a.ph5 {
-  margin-left:34%;
+  margin-left:30%;
   margin-top:20px;
   margin-bottom:10px;
   display: inline-block;
@@ -87,3 +87,20 @@ a.ph5 {
 } 
 a.ph5:hover { background: RGBA(255,255,255,.2); }
 a.ph5:active { background: white; }
+a.ph6 {
+  margin-left:30%;
+  margin-top:5px;
+  margin-bottom:5px;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+
+} 
+a.ph6:hover { background: RGBA(255,255,255,.2); }
+a.ph6:active { background: white; }

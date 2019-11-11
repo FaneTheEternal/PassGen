@@ -1,13 +1,17 @@
 
 
 addEventListener("DOMContentLoaded", () => {
-    const checkPageButton = document.getElementById('checkPage');
-    const passField = document.getElementById('input_password');
-    const loginField = document.getElementById('input_login');
-    const checkSaveButton = document.getElementById('DataSave');
-    const checkSeeButton = document.getElementById('Find');
-    const HIDE = document.getElementById('contain');
-    const view = document.getElementById('checklist');
+   const checkPageButton = document.getElementById('checkPage');//кнопка генерации
+    const passField = document.getElementById('input_password');//окно с паролем
+    const loginField = document.getElementById('input_login');//окно логина
+    const checkSaveButton = document.getElementById('DataSave');//кнопка сохранения
+    const checkSeeButton = document.getElementById('Find');//кнопка запроса вывода паролей текущего сайта
+    const HIDE = document.getElementById('contain');//блок состояния №1 (окна+кнопки)
+    const view = document.getElementById('checklist');//блок состояния №2 (под вывод)
+    const currs = document.getElementById('currentfield');//блок отображения учёток текущего сайта
+    const allButton = document.getElementById('seeALL');//кнопка вывода всех учёток
+    const allView = document.getElementById('allfields');//блок отображения всех учёток
+    
 
     checkPageButton.addEventListener('click', () => {
         passField.style.visibility = '';
@@ -33,6 +37,10 @@ addEventListener("DOMContentLoaded", () => {
                 void chrome.runtime.lastError;
             });
         });
+    check.allButton.addEventListener('click', () => {
+	currs.style.display = "none";
+	allView.style.display = "block";
+         });
     });
 
     checkSeeButton.addEventListener('click', () => { 
