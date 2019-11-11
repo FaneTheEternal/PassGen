@@ -46,7 +46,7 @@ addEventListener("DOMContentLoaded", () => {
     checkSeeButton.addEventListener('click', () => { 
         HIDE.style.display = "none"; 
         view.style.display = "block"; 
-        const field = document.getElementsByClassName('block1');
+        const field = document.getElementById('currentfield');
         fetch(`http://localhost:8080/`)
             .then(r => r.text())
             .then(result => {
@@ -54,7 +54,7 @@ addEventListener("DOMContentLoaded", () => {
                 
                 for (let domain in data) {
                     for (let login in data[domain]) {
-                        view.innerHTML += `<h5>${domain}: ${login} : ${data[domain][login]}</h5>`;
+                        field.innerHTML += `<h5 id="dataStr">${domain}: ${login} : ${data[domain][login]}</h5>`;
                     }
                 }
             });
