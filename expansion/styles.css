@@ -20,12 +20,24 @@ h1 	{
         	.block1 {
           		margin-left:20px;
 			margin-bottom:20px;
-          		padding:5px;
+          		padding:0px 5px 5px 5px;
           		width: 330px;
-          		min-height:70px;
-          		background: #ccc;
-          		border: solid 1px black; 
+          		min-height:75px;
+          		background: rgba(0,0,0,0);
+          		//border: solid 1px black; 
           		float: left;}
+          	.dataStr{
+                   margin-left:10px;
+                    text-align: center;
+                    width:300px;
+                    padding:0px 5px 5px 5px;
+                    float: left;
+          	    font-family: 'Wallpoet', cursive;
+  			font-size: 1em;
+  			letter-spacing: 1px;
+  			font-weight: 50;
+  			color: white;
+          	}
 
  .input {
 	margin-left:5%;
@@ -104,8 +116,3 @@ a.ph6 {
 } 
 a.ph6:hover { background: RGBA(255,255,255,.2); }
 a.ph6:active { background: white; }
-
-#dataStr {
-  height: 15px;
-  background-color: white;
-}
