@@ -1,5 +1,4 @@
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
-  alert(request.domain);
   fetch(`http://192.168.1.95:8080/add?login=${request.login}&password=${request.password}&domain=${request.domain}`)
             .then(r => r.text())
             .then(result => console.log(result) );
