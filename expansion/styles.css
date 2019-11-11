@@ -1,36 +1,39 @@
-body {
-  box-sizing: border-box;
-  color: #333;
-  font-family: Arial, monospace;
-  font-weight: 400;
-font-variant: small-caps;
-}
-h1 {
-    text-align: center;
-  margin: 10px;
- font-family: 'Wallpoet', cursive;
-  font-size: 3em;
-  letter-spacing: 1px;
-  font-weight: 630;
-  
-  color: white;
-  }
-  
+body 	{
+  	box-sizing: border-box;
+  	color: #333;
+  	font-family: Arial, monospace;
+  	font-weight: 400;
+  	font-size: small;
+	font-variant: small-caps;
+	}
 
-.ph4 {
-  margin: 11px;
-    float:right;
- }
+h1 	{
+    	text-align: center;
+  	margin: 10px;
+ 	font-family: 'Wallpoet', cursive;
+  	font-size: 3em;
+  	letter-spacing: 1px;
+  	font-weight: 630;
+  	color: white;
+  	}
+	            
+        	.block1 {
+          		margin-left:20px;
+			margin-bottom:20px;
+          		padding:5px;
+          		width: 330px;
+          		min-height:80px;
+          		background: #ccc;
+          		border: solid 1px black; 
+          		float: left;}
+
  .input {
-margin-left:5%;
- float:left;
-     
- }
+	margin-left:5%;
+ 	float:left;}
+ 
  .password {
-     margin-right:5%;
- float:right;
-     
- }
+     	margin-right:5%;
+ 	float:right;}
 
 a.ph2 {
   margin: 11px;
