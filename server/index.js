@@ -2,10 +2,11 @@ const app = require('express')();
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-const privateKey  = fs.readFileSync('./sslCERT/private.key', 'utf8');
-const certificate = fs.readFileSync('./sslCERT/certificate.pem', 'utf8');
+const tls = require('tls');
+const privateKey  = fs.readFileSync('./sslCERT/rootCA-key.pem', 'utf8').toString();
+const certificate = fs.readFileSync('./sslCERT/rootCA.pem', 'utf8').toString();
 
-const credentials = {key: privateKey, cert: certificate};
+const credentials = tls.createSecureContext({key: privateKey, cert: certificate});
 
 let data = JSON.parse(fs.readFileSync('./data.json'))
 
@@ -35,7 +36,7 @@ app.get('/', (req, res) => {
 
 
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(8080);
 httpsServer.listen(8443);
