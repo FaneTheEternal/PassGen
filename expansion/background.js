@@ -1,4 +1,4 @@
-const ip = '192.168.1.95:8080';
+const ip = 'localhost:8080';
 const url = `http://${ip}`;
 chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
   if (request.req == 'send') {
