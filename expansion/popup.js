@@ -5,6 +5,7 @@ addEventListener("DOMContentLoaded", () => {
     const checkSaveButton = document.getElementById('DataSave');
     const checkSeeButton = document.getElementById('Find');
     const HIDE = document.getElementById('contain');
+    const view = document.getElementById('checklist');
 
     checkPageButton.addEventListener('click', () => {
         passField.style.visibility = '';
@@ -23,7 +24,7 @@ addEventListener("DOMContentLoaded", () => {
     checkSaveButton.addEventListener('click', () => {
         const login = document.getElementById('input_login').value;
         const pass = document.getElementById('input_password').value;
-        checkSaveButton.innerHTML ="Saved";
+        checkSaveButton.innerHTML ="Login details saved";
         //void chrome.runtime.lastError;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, {login: login, password: pass}, response => {
@@ -32,8 +33,5 @@ addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    checkSeeButton.addEventListener('click', () => { 
-        HIDE.style.visibility = "hidden"; 
-        
-    });
+    checkSeeButton.addEventListener('click', () => { HIDE.style.display = "none"; view.style.display = "block"; });
 });
