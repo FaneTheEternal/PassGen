@@ -20,7 +20,7 @@ app.get('/add', (req, res) => {
     let pass = req.query.password;
     if (data[user] == undefined) data[user] = {};
     if (data[user][domain] == undefined) data[user][domain] = {};
-    data[user][domain][login] = password;
+    data[user][domain][login] = pass;
     fs.writeFile('./data.json', JSON.stringify(data), err => console.log(`Errors: ${err}`));
     res.send('done');
 });
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     console.log(`${req.method}: ${req.rawHeaders[1]}`);
     console.log(req.query);
     let user = req.rawHeaders[1].slice(0, req.rawHeaders[1].length - 5);
-    res.send(`${data[user]}`);
+    res.send(`${JSON.stringify(data[user])}`);
 });
 
 

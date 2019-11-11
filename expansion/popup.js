@@ -1,3 +1,5 @@
+
+
 addEventListener("DOMContentLoaded", () => {
     const checkPageButton = document.getElementById('checkPage');
     const passField = document.getElementById('input_password');
@@ -40,9 +42,11 @@ addEventListener("DOMContentLoaded", () => {
         fetch(`http://localhost:8080/`)
             .then(r => r.text())
             .then(result => {
-                for (let domain in result) {
-                    for (let login in domain) {
-                        field.innerHTML += `<h5>${domain}: ${login} : ${domain[login]}</h5>`;
+                const data = JSON.parse(result);
+                
+                for (let domain in data) {
+                    for (let login in data[domain]) {
+                        view.innerHTML += `<h5>${domain}: ${login} : ${data[domain][login]}</h5>`;
                     }
                 }
             });
